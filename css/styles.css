@@ -1,5 +1,3 @@
-@import url(./reset.css);
-
 body{
   font-family: "Oswald", sans-serif;
   font-optical-sizing: auto;
@@ -46,6 +44,7 @@ body{
     background-position: center;
     z-index: 1;
     padding-top: 80px;
+    height: 100dvh;
 }
 
 .hero::before{
@@ -70,13 +69,53 @@ body{
     position: relative;
 }
 
+.menu{
+    position: relative;
+    padding-right: 30px;
+    height: 30px;
+}
+
+.menu__item{
+    position: relative;
+    display: inline-block;
+    margin-bottom: 8px;
+    width: 30px;
+    height: 2px;
+    background-color: var(--white-color);
+}
+
+.menu__item::before{
+    content: '';
+    position: absolute;
+    top: 10px;
+    right: 0;
+    width: 30px;
+    height: 2px;
+    background-color: var(--white-color);
+}
+
+.menu__item::after{
+    content: '';
+    position: absolute;
+    top: 20px;
+    right: 0;
+    width: 30px;
+    height: 2px;
+    background-color: var(--white-color);
+}
+
+.menu__item:nth-child(1){
+    top: 0;
+    transform: translateX(10deg);
+}
+
 .header__list{
     display: none;
     column-gap: 60px;
     text-transform: uppercase;
     position: absolute;
-    top: 20px;
-    right: 0;
+    top: 40px;
+    right: 30px;
     justify-content: end;
     flex-direction: column;
 }
@@ -100,6 +139,7 @@ body{
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    color: var(--white-color);
 }
 
 .header__title{
@@ -122,8 +162,8 @@ body{
         column-gap: 60px;
         text-transform: uppercase;
         position: absolute;
-        top: 20px;
-        right: 0;
+        top: 40px;
+        right: 30px;
         justify-content: end;
         flex-direction: row;
     }
@@ -154,7 +194,7 @@ body{
 /* about start */
 
 .about{
-    margin: 120px 0;
+    padding: 120px 0;
 }
 
 .about__wrapper{
@@ -219,11 +259,12 @@ body{
 /* services start */
 
 .services{
-    margin: 120px 0;
+    padding: 120px 0;
     background-color: #FBFBFB;
 }
 
 .services__title{
+    margin-bottom: 80px;
     position: relative;
     font-size: var(--services-title-font-size);
     font-weight: bold;
@@ -248,10 +289,13 @@ body{
 }
 
 .services__item{
+    position: relative;
     padding: 40px 30px;
     width: 100%;
     min-width: 280px;
     background-color: var(--white-color);
+    border-bottom: 2px solid transparent;
+    transition: .3s;
 }
 
 .services__list{
@@ -265,6 +309,7 @@ body{
 }
 
 .item__title{
+    margin-bottom: 20px;
     position: relative;
     font-size: 20px;
     text-transform: uppercase;
@@ -274,21 +319,41 @@ body{
     content: '';
     position: absolute;
     left: 0;
-    bottom: 8px;
+    bottom: -10px;
     width: 35px;
     height: 2px;
     background-color: #252525;
 }
 
-.item__icon{
+.services__item::after{
+    content: '';
+    position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 50px;
     height: 50px;
+    top: 32px;
+    right: 26px;
     border-radius: 50%;
     background-color: #fafafa;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.services__item::before{
+    content: '';
+    position: absolute;
+    top: 38px;
+    right: 35px;
+    width: 35px;
+    height: 35px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    background-image: url(/images/icons/pencil-case.svg);
+    opacity: 0.4;
+    z-index: 10;
+    transition: .3s;
 }
 
 .item__text{
@@ -307,9 +372,32 @@ body{
         flex-direction: row;
         column-gap: 30px;
     }
+
+    .services__item:hover{
+        cursor: pointer;
+        border-bottom: 2px solid #70BF73;
+        transition: .3s;
+    }
+
+    .services__item:hover::before{
+        opacity: 1;
+        transition: .3s;
+    }
 }
 
 /* services end */
+
+/* team start */
+
+.team{
+
+}
+
+.team__list{
+
+}
+
+/* start end */
 
 /* options start */
 
@@ -368,27 +456,38 @@ body{
 
 /* footer start */
 
-.footer__section{
+.footer{
     background-color: var(--footer-bcg-color);
     width: 100%;
-}
-
-.footer{
     padding: 80px 0;
     color: #FFFFFF;
 }
 
-.footer__text{
+.footer__address{
     text-align: center;
 }
 
-.footer__icons{
+.footer__contacts{
+    margin: auto 0;
+}
+
+.footer__list{
     margin-top: 40px;
     position: relative;
     left: 50%;
     transform: translate(-50%, 50%);
     column-gap: 20px;
     width: fit-content;
+}
+
+.footer__item_facebook::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url(/images/icons/facebook-logo.svg);
 }
 
 /* footer end */
