@@ -1,6 +1,7 @@
-const openMenu = () =>{
-    ul = document.querySelector(".header__list")
-    ul.classList.toggle('active')
+const openMenu = (button) => {
+    const ul = document.querySelector(".header__list");
+    ul.classList.toggle('active');
+    button.classList.toggle('active');
 };
 
 let slideIndex = 1;
@@ -24,4 +25,3 @@ function showSlide(){
     }
     slides[slideIndex-1].style.display = "block";  
 }
-
