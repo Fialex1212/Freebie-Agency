@@ -39,6 +39,25 @@ body{
     margin: 0 auto;
 }
 
+.title{
+    margin-bottom: 80px;
+    position: relative;
+    font-size: var(--services-title-font-size);
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+.title::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 45px;
+    height: 2px;
+    background-color: #252525;
+}
+
+
 /* headher start*/
 
 .hero{
@@ -79,9 +98,9 @@ body{
     height: 30px;
 }
 
-.menu > span,
-.menu > span::before,
-.menu > span::after {
+.menu > .menu__item,
+.menu > .menu__item::before,
+.menu > .menu__item::after {
     display: block;
     position: absolute;
     width: 100%;
@@ -90,26 +109,26 @@ body{
     transition-duration: .25s;
 }
 
-.menu > span::before {
+.menu > .menu__item::before {
     content: '';
     top: -8px;
 }
 
-.menu > span::after {
+.menu > .menu__item::after {
     content: '';
     top: 8px;
 }
 
-.menu.active > span {
+.menu.active > .menu__item {
     transform: rotate(45deg);
 }
 
-.menu.active > span::before {
+.menu.active > .menu__item::before {
     top: 0;
     transform: rotate(0);
 }
 
-.menu.active > span::after {
+.menu.active > .menu__item::after {
     top: 0;
     transform: rotate(90deg);
 }
@@ -152,9 +171,6 @@ body{
     display: none;
     column-gap: 60px;
     text-transform: uppercase;
-    position: absolute;
-    top: 40px;
-    right: 30px;
     justify-content: end;
     flex-direction: column;
 }
@@ -258,6 +274,7 @@ body{
 }
 
 .about__title{
+    margin-bottom: 30px;
     font-size: 42px;
     font-weight: 200;
 }
@@ -272,6 +289,9 @@ body{
     width: 100%;
     max-width: 200px;
     font-size: 15px;
+}
+.about__subtitle:nth-child(1){
+    margin-bottom: 100px;
 }
 
 .about__subtitle.right{
@@ -301,25 +321,6 @@ body{
 .services{
     padding: 120px 0;
     background-color: #FBFBFB;
-}
-
-.services__title{
-    margin-bottom: 80px;
-    position: relative;
-    font-size: var(--services-title-font-size);
-    font-weight: bold;
-    text-transform: capitalize;
-}
-
-.services__title::after{
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -10px;
-    width: 45px;
-    height: 2px;
-    background-color: #252525;
-
 }
 
 .services__list{
@@ -386,7 +387,7 @@ body{
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
-    background-image: url(/images/icons/pencil-case.svg);
+    background-image: url(./images/icons/pencil-case.svg);
     opacity: 0.4;
     z-index: 10;
     transition: .3s;
@@ -527,15 +528,15 @@ body{
 }
 
 .team__item:nth-child(1)::before{
-    background-image: url(/images/team/tom.jpg);
+    background-image: url(./images/team/tom.jpg);
 }
 
 .team__item:nth-child(2)::before{
-    background-image: url(/images/team/michael.jpg);
+    background-image: url(./images/team/michael.jpg);
 }
 
 .team__item:nth-child(3)::before{
-    background-image: url(/images/team/tim.jpg);
+    background-image: url(./images/team/tim.jpg);
 }
 
 .team__name{
@@ -621,12 +622,12 @@ body{
 .options__item:first-child::before{
     width: 40px;
     height: 40px;
-    background-image: url(/images/icons/briefcase.svg);
+    background-image: url(./images/icons/briefcase.svg);
     transition: 0.3s;
 }
 
 .options__item:last-child::before{
-    background-image: url(/images/icons/mail.svg);
+    background-image: url(./images/icons/mail.svg);
     transition: 0.3s;
 }
 
@@ -648,12 +649,12 @@ body{
     .options__item:hover:first-child::before{
         width: 40px;
         height: 40px;
-        background-image: url(/images/icons/briefcase_white.svg);
+        background-image: url(./images/icons/briefcase_white.svg);
         transition: 0.3s;
     }
 
     .options__item:hover:last-child::before{
-        background-image: url(/images/icons/mail_white.svg);
+        background-image: url(./images/icons/mail_white.svg);
         transition: 0.3s;
     }
 
@@ -725,15 +726,15 @@ body{
 }
 
 .footer__item:nth-child(1) .footer__link::before{
-    background-image: url(/images/icons/facebook.svg);
+    background-image: url(./images/icons/facebook.svg);
 }
 
 .footer__item:nth-child(2) .footer__link::before{
-    background-image: url(/images/icons/twitter.svg);
+    background-image: url(./images/icons/twitter.svg);
 }
 
 .footer__item:nth-child(3) .footer__link::before{
-    background-image: url(/images/icons/pinterest.svg);
+    background-image: url(./images/icons/pinterest.svg);
 }
 
 .rights{
