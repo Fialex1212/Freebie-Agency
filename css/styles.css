@@ -279,7 +279,7 @@ body{
     content: '';
     position: absolute;
     left: 0;
-    bottom: 0px;
+    bottom: -10px;
     width: 45px;
     height: 2px;
     background-color: #252525;
@@ -391,19 +391,144 @@ body{
 
 /* services end */
 
+/* works start */
+
+.works{
+    padding: 120px 0;
+}
+
+.works__title{
+    position: relative;
+    font-size: var(--services-title-font-size);
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+.works__title::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 45px;
+    height: 2px;
+    background-color: #252525;
+}
+
+.works__link{
+    display: flex;
+    width: 100%;
+    font-size: 13px;
+    justify-content: end;
+}
+
+@media screen and (min-width: 992px){
+    .works__link{
+        opacity: 0.5;
+        transition: 0.3s;
+    }
+
+    .works__link:hover{
+        opacity: 1;
+        transition: 0.3s;
+    }
+}
+
+/* works end */
+
 /* team start */
 
 .team{
     padding: 120px 0;
 }
 
-.team__list{
-
+.team__title{
+    margin-bottom: 80px;
+    position: relative;
+    font-size: var(--services-title-font-size);
+    font-weight: bold;
+    text-transform: capitalize;
 }
 
+.team__title::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 45px;
+    height: 2px;
+    background-color: #252525;
+}
 
+.team__list{
+    display: flex;
+    column-gap: 30px;
+}
 
-/* start end */
+.team__item{
+    position: relative;
+    width: 370px;
+    height: 398px;
+}
+
+.team__item::before{
+    content: '';
+    position: absolute;
+    top: 10;
+    left: 0;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 100%;
+    height: 398px;
+}
+
+.team__item:nth-child(1)::before{
+    background-image: url(/images/team/tom.jpg);
+}
+
+.team__item:nth-child(2)::before{
+    background-image: url(/images/team/michael.jpg);
+}
+
+.team__item:nth-child(3)::before{
+    background-image: url(/images/team/tim.jpg);
+}
+
+.team__name{
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    width: 370px;
+    height: 56px;
+    transition: 0.3s;
+    background-color: rgba(255, 255, 255, 0.4);
+    padding-top: 20px;
+}
+
+.team__name:hover::before{
+    content: '';
+    position: absolute;
+    width: 45px;
+    height: 2px;
+    top: 50px;
+    right: 50%;
+    transform: translate(50%, 50%);
+    background-color: #252525;
+}
+
+.team__hidden{
+    color: #252525;
+}
+
+@media screen and (min-width: 992px){
+    .team__item:hover .team__name{
+        transition: 0.3s;
+        height: 156px;
+        background-color: rgba(255, 255, 255, 0.8);
+    }
+}
+
+/* team end */
 
 /* options start */
 
