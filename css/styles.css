@@ -138,42 +138,6 @@ body{
     transform: rotate(90deg);
 }
 
-/* .menu__item{
-    position: relative;
-    display: inline-block;
-    margin-bottom: 8px;
-    width: 30px;
-    height: 2px;
-    background-color: var(--white-color);
-}
-
-.menu__item::before{
-    content: '';
-    position: absolute;
-    top: 10px;
-    right: 0;
-    width: 30px;
-    height: 2px;
-    background-color: var(--white-color);
-}
-
-.menu__item::after{
-    content: '';
-    position: absolute;
-    top: 20px;
-    right: 0;
-    width: 30px;
-    height: 2px;
-    background-color: var(--white-color);
-}
-
-.menu__item:nth-child(1){
-    top: 0;
-    transform: translateX(10deg);
-} */
-
-/* Show the list when active */
-
 .header__list{
     position: absolute;
     top: 40px;
@@ -211,6 +175,7 @@ body{
     font-size: var(--header-title-font-size);
     text-transform: uppercase;
     margin-bottom: 20px;
+    text-align: center;
 }
 
 .header__subtitle{
